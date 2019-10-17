@@ -1,0 +1,5 @@
+speed=0.25;
+direction=180;
+image_speed=0.1;
+
+instance_create(x,y,obj_fire_right)

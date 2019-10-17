@@ -1,0 +1,62 @@
+ //dead control
+if(dead==1)
+ {
+  sprite_index=player_dead;
+  if(timer=0){sound_stop_all();sound_play(snd_break);}
+  if(timer=30){sound_play(snd_lose);}
+  if(timer=300){game_restart();}
+  timer+=1;
+  exit;
+ }
+
+ //no jump,no gif
+if(jump==0)
+{
+   face=0;
+ // move & gif
+if(keyboard_check(ord('A')))
+   {
+    x-=1;
+    image_index-=0.1;
+    face=-1;
+   }
+ 
+if(keyboard_check(ord('D')))
+   {
+    x+=1;
+    image_index+=0.1;
+    face=1;
+   }
+}
+
+ //jump
+if(keyboard_check_pressed(ord('J'))&&jump==0)
+ {
+  sound_play(snd_jump);
+  direction=90;
+  image_index=1;//GIF
+  speed=4;//up speed
+  gravity=0.14;//g
+  jump=1;
+ //jump move
+ 
+ }
+ 
+ if(jump==1)
+  {
+  x+=face;
+  }
+  
+ //control x,y
+if(x<16)x=16;
+if(x>room_width-16)x=room_width-16;
+if(y+speed>=206&&jump==1&&direction==270)
+ {
+  y=206;
+  speed=0;//jump stop
+  gravity=0;
+  jump=0;
+  image_index=0;
+ }
+ 
+

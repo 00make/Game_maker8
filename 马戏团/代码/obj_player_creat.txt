@@ -1,0 +1,8 @@
+
+//modify
+face=0;//人物方向，0静止，1右边，-1左边
+jump=0;///0ground,1jump 
+dead=0;//0live
+timer=0;
+//
+image_speed=0;

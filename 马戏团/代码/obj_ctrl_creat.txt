@@ -1,0 +1,5 @@
+instance_create(64,206,obj_player);
+time=200;
+pass=0;
+
+sound_loop(snd_back);

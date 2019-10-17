@@ -1,0 +1,8 @@
+
+time+=1;
+
+if(time/4>100 && irandom(99)<2&&obj_player.dead==0)
+{
+ instance_create(room_width+20,96,obj_fire);
+ time=0;
+}
